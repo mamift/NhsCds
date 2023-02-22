@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CDS-XMLInterchange SchemaDate="2012-05-11" SchemaVersion="6-2-3" xmlns="http://www.nhsia.nhs.uk/DataStandards/XMLschema/CDS/ns">
+<CDS-XMLInterchange xmlns="http://www.nhsia.nhs.uk/DataStandards/XMLschema/CDS/ns">
   <CDSInterchangeHeader>
     <CDSInterchangeSenderIdentity>sender</CDSInterchangeSenderIdentity>
     <CDSInterchangeReceiverIdentity>receiver</CDSInterchangeReceiverIdentity>
