@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CDS-XML_Message_Root-V6-2-3.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CDS-XML_Message_Root-V6-2-3.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="XObjectsCore" Version="3.3.0" />
   </ItemGroup>
 
