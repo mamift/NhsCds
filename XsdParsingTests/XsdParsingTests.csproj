@@ -16,4 +16,10 @@
     <ProjectReference Include="..\NhsCdsXsdLib\NhsCdsXsdLib.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="nhsCds_simple_eg.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

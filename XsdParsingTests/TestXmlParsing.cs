@@ -12,7 +12,10 @@ namespace XsdParsingTests
         [Test]
         public void TestSavingNewCdsXmlInterchangeElement()
         {
-            var element = new CDSXMLInterchange();
+            var element = new CDSXMLInterchange() {
+                SchemaDate = DateTime.Parse("11/05/2012 12:00:00 AM"), // a date other than this will throw an error
+                SchemaVersion = "6-2-3"
+            };
 
             var header = new CDSInterchangeHeader_Structure() {
                 CDSInterchangeSenderIdentity = "sender",
@@ -24,7 +27,7 @@ namespace XsdParsingTests
             };
 
             var trailer = new CDSInterchangeTrailer_Structure() {
-                CDSInterchangeControlCount = 0,
+                CDSInterchangeControlCount = 42,
                 CDSInterchangeControlReference = "ctrl ref",
                 CDSInterchangeReceiverIdentity = "receiver",
                 CDSInterchangeSenderIdentity = "sender"
@@ -36,12 +39,23 @@ namespace XsdParsingTests
             var allMsgTypes = new CDSXMLInterchange.CDSNetChangeAllMessageTypesLocalType();
             var bulkGroup = new CDSXMLInterchange.CDSBulkGroup160MessageLocalType();
 
-            // because these two are choices, only the last one set, will get written to XML. comment out the 
+            // because the schema models these as choices (1 or the other), only the last one set will get written to XML. comment out the 
             // "element.CDSBulkGroup160Message.Add(bulkGroup)" line to get 'CDSNetChangeAllMessageTypes' written to the output XML
             element.CDSNetChangeAllMessageTypes.Add(allMsgTypes);
             element.CDSBulkGroup160Message.Add(bulkGroup);
 
             element.Save("cds1.xml");
+        }
+
+        [Test]
+        public void TestReadingCdsXml()
+        {
+            var cdsxml = CDSXMLInterchange.Load(@"nhsCds_simple_eg.xml");
+
+            Assert.NotNull(cdsxml);
+
+            Assert.AreEqual(cdsxml.SchemaDate, DateTime.Parse("2012-05-11"));
+            Assert.AreEqual(cdsxml.SchemaVersion, "6-2-3");
         }
     }
 }

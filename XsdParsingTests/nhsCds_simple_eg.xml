@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CDS-XMLInterchange SchemaDate="2012-05-11" SchemaVersion="6-2-3" xmlns="http://www.nhsia.nhs.uk/DataStandards/XMLschema/CDS/ns">
+  <CDSInterchangeHeader>
+    <CDSInterchangeSenderIdentity>sender</CDSInterchangeSenderIdentity>
+    <CDSInterchangeReceiverIdentity>receiver</CDSInterchangeReceiverIdentity>
+    <CDSInterchangeControlReference>ctrl ref</CDSInterchangeControlReference>
+    <CDSInterchangeDateOfPreparation>2023-02-22+10:00</CDSInterchangeDateOfPreparation>
+    <CDSInterchangeTimeOfPreparation>11:24:02.9656042Z</CDSInterchangeTimeOfPreparation>
+    <CDSInterchangeApplicationReference>app1</CDSInterchangeApplicationReference>
+  </CDSInterchangeHeader>
+  <CDSBulkGroup-160-Message />
+  <CDSInterchangeTrailer>
+    <CDSInterchangeControlReference>ctrl ref</CDSInterchangeControlReference>
+    <CDSInterchangeControlCount>42</CDSInterchangeControlCount>
+    <CDSInterchangeSenderIdentity>sender</CDSInterchangeSenderIdentity>
+    <CDSInterchangeReceiverIdentity>receiver</CDSInterchangeReceiverIdentity>
+  </CDSInterchangeTrailer>
+</CDS-XMLInterchange>
