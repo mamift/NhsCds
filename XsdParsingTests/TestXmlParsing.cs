@@ -14,7 +14,7 @@ namespace XsdParsingTests
         {
             var element = new CDSXMLInterchange() {
                 SchemaDate = DateTime.Parse("11/05/2012 12:00:00 AM"), // a date other than this will throw an error
-                SchemaVersion = "6-2-3"
+                SchemaVersion = "6-2-3" // a value other than 6-2-3 will error
             };
 
             var header = new CDSInterchangeHeader_Structure() {
@@ -54,6 +54,7 @@ namespace XsdParsingTests
 
             Assert.NotNull(cdsxml);
 
+            // demonstrates the use of Fixed values in an XSD: note these values are not even in the XML file
             Assert.AreEqual(cdsxml.SchemaDate, DateTime.Parse("2012-05-11"));
             Assert.AreEqual(cdsxml.SchemaVersion, "6-2-3");
         }
